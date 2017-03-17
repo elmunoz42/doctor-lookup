@@ -17,11 +17,13 @@
     <div class="col-sm-4">
         <div class="jumbotron">
           <form class="form-group" id="intake-form">
-              <label for="name">Name</label><br>
-              <input id="name" type="text"  value="Steve"><br>
               <label for="symptom">Symptom</label><br>
               <input id="symptom" type="text" value="head ache"><br>
-              <button type="submit" class="btn button-success">Submit</button>
+              <select class="form-control" id="location">
+                <option value="0">Portland Downtown</option>
+                <option value="1">Use Current Location</option>
+              </select>
+              <button type="submit" class="btn button-success">Submit</button><br>
           </form>
         </div>
         <!-- jumbotron -->
