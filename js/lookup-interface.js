@@ -1,5 +1,4 @@
 var Doctor = require('./../js/lookup.js').doctorModule;
-var Patient = require('./../js/patient.js').patientModule;
 var testLat=0;
 var testLon=0;
 
@@ -10,7 +9,7 @@ var displaySuccess = function(doctor) {
 };
 
 var displayError = function(error) {
-  alert("BetterDoctor API failed to get results! " + error);
+  alert("BetterDoctor failed to get results! Perhaps you misspelled or try describing your condition differently." + error);
 };
 
 
@@ -36,6 +35,8 @@ var getPosition = function(position, positionFound) {
 
 $(document).ready(function() {
 
+  getLocation(getPosition);
+
   var positionFound = false;
   $("#intake-form").submit(function(){
     event.preventDefault();
@@ -45,23 +46,21 @@ $(document).ready(function() {
     console.log("location: " + location);
     var patientLat = 45.5209678;
     var patientLon = -122.6775636;
-    var name = $("#name").val();
     var symptom = $("#symptom").val();
     var doctor_class = new Doctor("","","");
     if (location==='0') {
       doctor_class.getDoctors(symptom, displaySuccess, displayError, patientLat, patientLon);
     }
     if (location==='1') {
-        getLocation(getPosition);
-        console.log("loading...");
-        setTimeout(function(){
+        if (testLat!=0 && testLon!=0){
           patientLat = testLat;
           patientLon = testLon;
           console.log("testLat in submit: " + testLat);
           console.log("testLon in submit: " + testLon);
           doctor_class.getDoctors(symptom, displaySuccess, displayError, patientLat, patientLon);
-        }, 6000 );
-        // timeout
+        } else {
+          alert("couldn't find location at the time. Try again in a minute.");
+        }
     }
     // if
   });
