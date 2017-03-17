@@ -14,6 +14,24 @@
       <h1>Doctor Lookup</h1>
     </div>
     <!-- title -->
+    <!-- <button onclick="getLocation()">Try It</button>
+    <p id="demo"></p>
+
+    <script>
+      var currentLocation = document.getElementById("demo");
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          currentLocation.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+      function showPosition(position) {
+        currentLocation.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+      }
+    </script> -->
+
     <div class="col-sm-4">
         <div class="jumbotron">
           <form class="form-group" id="intake-form">
@@ -33,8 +51,9 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Doctors Name:</th>
-              <th>Specialization</th>
+              <th>Name:</th>
+              <th>Specialization:</th>
+              <th>Address:</th>
             </tr>
           </thead>
           <tbody id="recommendations">
