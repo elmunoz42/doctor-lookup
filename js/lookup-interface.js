@@ -4,7 +4,7 @@ var Patient = require('./../js/patient.js').patientModule;
 
 var displaySuccess = function(doctor) {
   $("#recommendations").append(
-    "<tr>" + "<td>" + doctor.name + "</td>" + "<td>" + doctor.specialty + "</td>"+"</tr>"
+    "<tr>" + "<td>" + doctor.name + "</td>" + "<td>" + doctor.specialty + "</td>"+ "<td>" + doctor.address + "</td>" + "</tr>" 
   );
 };
 
