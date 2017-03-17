@@ -14,23 +14,6 @@
       <h1>Doctor Lookup</h1>
     </div>
     <!-- title -->
-    <!-- <button onclick="getLocation()">Try It</button>
-    <p id="demo"></p>
-
-    <script>
-      var currentLocation = document.getElementById("demo");
-      function getLocation() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-          currentLocation.innerHTML = "Geolocation is not supported by this browser.";
-        }
-      }
-      function showPosition(position) {
-        currentLocation.innerHTML = "Latitude: " + position.coords.latitude +
-        "<br>Longitude: " + position.coords.longitude;
-      }
-    </script> -->
 
     <div class="col-sm-4">
         <div class="jumbotron">
@@ -39,7 +22,11 @@
               <input id="name" type="text"  value="Steve"><br>
               <label for="symptom">Symptom</label><br>
               <input id="symptom" type="text" value="head ache"><br>
-              <button type="submit" class="btn button-success">Submit</button>
+              <select class="form-control" id="location">
+                <option value="0">Portland Downtown</option>
+                <option value="1">Use Current Location (beta version)</option>
+              </select>
+              <button type="submit" class="btn button-success">Submit</button><br>
           </form>
         </div>
         <!-- jumbotron -->
