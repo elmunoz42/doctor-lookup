@@ -35,7 +35,11 @@ var getPosition = function(position, positionFound) {
 };
 
 var combinedGeoDoc = function(symptom, displaySuccess, displayError){
-  getDoctorsGeo(symptom, displaySuccess, displayError, getLocation());
+  getLocation();
+  setTimeout(function () {
+
+    getDoctorsGeo(symptom, displaySuccess, displayError, testLat, testLon);
+  }, 8000);
 };
 
 

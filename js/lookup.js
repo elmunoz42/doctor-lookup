@@ -27,11 +27,9 @@ var getDoctors = function(medicalIssue, callbackSuccess, callbackError, patientL
     });
 };
 
-var getDoctorsGeo = function(medicalIssue, callbackSuccess, callbackError, latLon) {
+var getDoctorsGeo = function(medicalIssue, callbackSuccess, callbackError, testLat, testLon) {
 
-testLat = latLon[0];
-testLon = latLon[1];
-setTimeout(function () {
+
   if (testLat!==0 && testLon!==0){
     patientLat = testLat;
     patientLon = testLon;
@@ -58,7 +56,7 @@ setTimeout(function () {
   } else {
     alert("couldn't find location at the time. Try again in a minute.");
   }
-}, 8000);
+
 
 };
 
