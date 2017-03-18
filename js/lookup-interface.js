@@ -3,7 +3,7 @@ var getDoctors = require('./../js/lookup.js').getDoctorsModule;
 
 var displaySuccess = function(doctor) {
   $("#recommendations").append(
-    "<tr>" + "<td>" + doctor.name + "</td>" + "<td>" + doctor.specialty + "</td>"+ "<td>" + doctor.address + "</td>" + "</tr>"
+    "<tr>" + "<td>" + doctor.name + "</td>" + "<td>" + doctor.specialty + "</td>"+ "<td><a href='http://maps.google.com/?q=" + doctor.address + "' target='_blank'>" + doctor.address +"</a></td>" + "</tr>"
   );
 };
 
@@ -20,7 +20,7 @@ $(document).ready(function() {
     $("#recommendations").empty();
 
     //NOTE: the "geolocation" branch on git hub uses geo location to find doctors. Had async issues.
-    
+
     var patientLat = 45.5209678;
     var patientLon = -122.6775636;
     var symptom = $("#symptom").val();
