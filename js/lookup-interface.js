@@ -6,7 +6,7 @@ var testLon=0;
 
 var displaySuccess = function(doctor) {
   $("#recommendations").append(
-    "<tr>" + "<td>" + doctor.name + "</td>" + "<td>" + doctor.specialty + "</td>"+ "<td>" + doctor.address + "</td>" + "</tr>"
+    "<tr>" + "<td>" + doctor.name + "</td>" + "<td>" + doctor.specialty + "</td>"+ "<td><a href='http://maps.google.com/?q=" + doctor.address + "' target='_blank'>" + doctor.address +"</a></td>" + "</tr>"
   );
 };
 

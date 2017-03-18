@@ -1,6 +1,23 @@
+
 body {
-  background-color: lightblue;
+height: 800px;
+background: url('/../img/docbackground4.jpeg') no-repeat center center;
+background-size: 800px;
+-moz-background-size: 100% 100%;
+-webkit-background-size: 100% 100%;
+-o-background-size: 100% 100%;
 }
+
 .jumbotron {
-  background-color: lightpink;
+  background-color: transparent;
+  text-align: center;
+}
+
+.button-success {
+  margin-top: 10px;
+}
+
+#location {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
