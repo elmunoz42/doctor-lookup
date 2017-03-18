@@ -1,4 +1,6 @@
 var Doctor = require('./../js/lookup.js').doctorModule;
+var getDoctors = require('./../js/lookup.js').getDoctors;
+var getDoctorsGeo = require('./../js/lookup.js').getDoctorsGeo;
 var testLat=0;
 var testLon=0;
 
@@ -29,13 +31,17 @@ var getPosition = function(position, positionFound) {
   var currentPosition = [testLat, testLon];
   console.log("testLat in function" + testLat);
   console.log("testLon in function" + testLon);
-  positionFound = true;
   return currentPosition;
 };
 
+var combinedGeoDoc = function(symptom, displaySuccess, displayError){
+  getDoctorsGeo(symptom, displaySuccess, displayError, getLocation());
+};
+
+
 $(document).ready(function() {
 
-  getLocation(getPosition);
+  // getLocation(getPosition);
 
   var positionFound = false;
   $("#intake-form").submit(function(){
@@ -47,20 +53,20 @@ $(document).ready(function() {
     var patientLat = 45.5209678;
     var patientLon = -122.6775636;
     var symptom = $("#symptom").val();
-    var doctor_class = new Doctor("","","");
     if (location==='0') {
-      doctor_class.getDoctors(symptom, displaySuccess, displayError, patientLat, patientLon);
+      getDoctors(symptom, displaySuccess, displayError, patientLat, patientLon);
     }
     if (location==='1') {
-        if (testLat!=0 && testLon!=0){
-          patientLat = testLat;
-          patientLon = testLon;
-          console.log("testLat in submit: " + testLat);
-          console.log("testLon in submit: " + testLon);
-          doctor_class.getDoctors(symptom, displaySuccess, displayError, patientLat, patientLon);
-        } else {
-          alert("couldn't find location at the time. Try again in a minute.");
-        }
+        combinedGeoDoc(symptom, displaySuccess, displayError, testLat, testLon);
+        // if (testLat!=0 && testLon!=0){
+        //   patientLat = testLat;
+        //   patientLon = testLon;
+        //   console.log("testLat in submit: " + testLat);
+        //   console.log("testLon in submit: " + testLon);
+        //   doctor_class.getDoctors(symptom, displaySuccess, displayError, patientLat, patientLon);
+        // } else {
+        //   alert("couldn't find location at the time. Try again in a minute.");
+        // }
     }
     // if
   });
