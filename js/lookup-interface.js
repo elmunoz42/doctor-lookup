@@ -20,6 +20,7 @@ $(document).ready(function() {
     $("#recommendations").empty();
 
     //NOTE: the "geolocation" branch on git hub uses geo location to find doctors. Had async issues.
+    
     var patientLat = 45.5209678;
     var patientLon = -122.6775636;
     var symptom = $("#symptom").val();
