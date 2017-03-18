@@ -45,7 +45,7 @@ _web browser and PHP 5 are necessary to operate this _
 
 ## Known Bugs
 
-_Asynchrony is not fully resolved for current location if HTML5 can't get location in time and there is an alert that asks the user to try again and an if statement that keeps the BetterDoctor API from being triggered. Would like to find a solution to use callback function for location not sure why it didn't work._
+_Asynchrony is not fully resolved for current location if HTML5 can't get location in time. The error is handled in the front end with an alert that asks the user to try again and in the lookup-interface with an if statement that keeps the BetterDoctor API from being triggered. Would like to find a solution to use callback function for location not sure why it didn't work._
 
 ## Support and contact details
 
