@@ -6,7 +6,7 @@ function Doctor (first_name, last_name, specialty, street, city, state) {
   this.address = street + ", " + city + ", " + state;
 }
 
-Doctor.prototype.getDoctors = function(medicalIssue, callbackSuccess, callbackError, patientLat, patientLon) {
+var getDoctors = function(medicalIssue, callbackSuccess, callbackError, patientLat, patientLon) {
   $.get('https://api.betterdoctor.com/2016-03-01/doctors?query='+ medicalIssue+'&location=45.5231%2C-122.6765%2C%205&user_location='+patientLat+'%2C'+patientLon+'&skip=0&limit=20&user_key=' + apiKey)
    .then(function(result) {
       var topFiveDoctors = [];
@@ -27,5 +27,5 @@ Doctor.prototype.getDoctors = function(medicalIssue, callbackSuccess, callbackEr
     });
 };
 
-
+exports.getDoctorsModule = getDoctors;
 exports.doctorModule = Doctor;
