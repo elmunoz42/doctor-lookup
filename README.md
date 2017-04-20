@@ -21,8 +21,7 @@ _website where users may enter a medical issue (ie: “ear ache”) into a form,
 |-------------------------------------------------------|:-----------------:|:---------------:|
 | 1) User can enter a symptom and get a list of five doctors in the Portland area| "headache", "Portland" | "Craig, Hertler	Specializes in ear, nose and throat problems.	9155 SW Barnes Rd, Portland, OR" (for each...)|
 | 2) User enters an unrecoginize symptom and receives error message. | "cance" | "BetterDoctor failed to get results! Perhaps you misspelled or try describing your condition differently."|
-| 3 GEO*) User can enter a symptom and get a list of doctors in their current location|"headache", "Current Position"| "Craig, Hertler	Specializes in ear, nose and throat problems.	9155 SW Barnes Rd, Portland, OR" (for each...)|
-
+| 3 GEO*) User can enter a symptom and get a list of doctors in their current location. | "headache", "Current Position"| "Craig, Hertler	Specializes in ear, nose and throat problems.	9155 SW Barnes Rd, Portland, OR" (for each...)|
 | 4 GEO*) User's location could not be found. | "headache", "Current Position" | "Couldn't find location at the time. Try again in a minute."|
 
 * these specs are met in the geolocation branch but are not present in master branch. 
